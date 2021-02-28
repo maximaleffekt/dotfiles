@@ -17,6 +17,9 @@ cd dotfiles
 git add vimrc
 git add neofetch
 git add fish
+git add collectdots.sh
 git status
 
 git commit -m "Updated dotfiles"
+
+echo "Committed dotfiles to local git repo, don't forget to push!"
