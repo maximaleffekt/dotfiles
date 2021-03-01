@@ -20,6 +20,15 @@ git add fish
 git add collectdots.sh
 git status
 
-git commit -m "Updated dotfiles"
+echo "Specify a commit message or leave empty for default"
+read message
+
+if [ -z "$message" ]
+then
+	git commit -m "Updated dotfiles"
+else
+	git commit -m "$message"
+fi
+
 
 echo "Committed dotfiles to local git repo, don't forget to push!"
