@@ -6,15 +6,19 @@ cd
 cp .vimrc vimrc
 mv vimrc ~/dotfiles
 
+#copy neovim
+cp -r ~/.config/nvim ~/dotfiles/nvim
+
 #copy neofetch config
-cp -r .config/neofetch/ ~/dotfiles/neofetch
+cp -r ~/.config/neofetch/ ~/dotfiles/neofetch
 
 #copy fish config folder
-cp -r .config/fish ~/dotfiles/fish
+cp -r  ~/.config/fish ~/dotfiles/fish
 
 cd dotfiles
 
 git add vimrc
+git add nvim
 git add neofetch
 git add fish
 git add collectdots.sh
