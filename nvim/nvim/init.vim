@@ -1,5 +1,6 @@
 "Basic preferences
 set rnu
+set nu
 syntax on
 set splitbelow
 set mouse=a
@@ -11,6 +12,7 @@ Plug 'kassio/neoterm'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
+"Plug 'Yggdroot/indentLine' "Have to experiment with the settings here more
 
 Plug 'preservim/nerdtree'
 
@@ -29,6 +31,9 @@ tnoremap <c-w> <c-\><c-n><c-w>
 "Maps F3 to toggling the neoterm window
 noremap <F3> :Ttoggle<CR>
 tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
+"This does the ame thing as the above shortcuts but for double space
+noremap <Space><Space> :Ttoggle<CR>
+"tnoremap <Space><Space> <c-\><c-n>:Ttoggle<CR><c-w>l
 
 "Nerdtree stuff:
 " Start NERDTree and put the cursor back in the other window.
