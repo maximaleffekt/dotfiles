@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd
+#cd
 
 #copy vimrc
-cp .vimrc vimrc
-mv vimrc ~/dotfiles
+#cp .vimrc vimrc
+#mv vimrc ~/dotfiles
 
 #copy neovim
 cp -r ~/.config/nvim ~/dotfiles/nvim
@@ -15,16 +15,16 @@ cp -r ~/.config/neofetch/ ~/dotfiles/neofetch
 #copy fish config folder
 cp -r  ~/.config/fish ~/dotfiles/fish
 
-cd dotfiles
+cd ~/dotfiles
 
-git add vimrc
+#git add vimrc
 git add nvim
 git add neofetch
 git add fish
 git add collectdots.sh
 git status
 
-echo "Specify a commit message or leave empty for default"
+echo "Specify a commit message or leave empty for default: "
 read message
 
 if [ -z "$message" ]
