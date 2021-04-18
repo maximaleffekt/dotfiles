@@ -9,7 +9,7 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'kassio/neoterm'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/limelight.vim'

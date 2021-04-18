@@ -15,13 +15,20 @@ cp -r ~/.config/neofetch/ ~/dotfiles/neofetch
 #copy fish config folder
 cp -r  ~/.config/fish ~/dotfiles/fish
 
+#copy zshrc
+cp ~/.zshrc ~/dotfiles/zshrc
+
+#copy starship toml
+cp ~/.config/starship.toml ~/dotfiles/starship.toml
+
 cd ~/dotfiles
 
 #git add vimrc
-git add nvim
-git add neofetch
-git add fish
-git add collectdots.sh
+#git add nvim
+#git add neofetch
+#git add fish
+#git add collectdots.sh
+git add .
 git status
 
 echo "Specify a commit message or leave empty for default: "
