@@ -39,6 +39,10 @@ bindkey -v
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshc="nvim ~/.zshrc"
 alias c="clear"
+alias n="nvim"
+alias v="nvim"
+alias neo="neofetch"
+alias up2="brew update && brew upgrade"
 
 #initialize starship prompt
 eval "$(starship init zsh)"
