@@ -40,9 +40,11 @@ bindkey -v
 alias zshc="nvim ~/.zshrc"
 alias c="clear"
 alias n="nvim"
+alias nvimc="nvim ~/.config/nvim/init.vim"
 alias v="nvim"
 alias neo="neofetch"
 alias up2="brew update && brew upgrade"
+alias kittyc="nvim ~/.config/kitty/kitty.conf"
 
 #initialize starship prompt
 eval "$(starship init zsh)"

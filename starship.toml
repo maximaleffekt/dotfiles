@@ -1,5 +1,5 @@
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
@@ -12,7 +12,7 @@ disabled = false
 truncation_symbol = ".../"
 
 [git_status]
-disabled = true
+disabled = false
 
 [line_break]
 disabled = false
@@ -20,6 +20,9 @@ disabled = false
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
+[python]
+python_binary = ["python3", "python"]
 
 [shell]
 fish_indicator = "f"
