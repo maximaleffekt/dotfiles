@@ -6,14 +6,14 @@
 #cp .vimrc vimrc
 #mv vimrc ~/dotfiles
 
-#copy neovim
-cp -r ~/.config/nvim ~/dotfiles/nvim
+#copy neovim folder
+cp -r ~/.config/nvim ~/dotfiles/
 
 #copy neofetch config
-cp -r ~/.config/neofetch/ ~/dotfiles/neofetch
+cp -r ~/.config/neofetch/ ~/dotfiles/
 
 #copy fish config folder
-cp -r  ~/.config/fish ~/dotfiles/fish
+cp -r  ~/.config/fish ~/dotfiles/
 
 #copy zshrc
 cp ~/.zshrc ~/dotfiles/zshrc
@@ -21,8 +21,8 @@ cp ~/.zshrc ~/dotfiles/zshrc
 #copy starship toml
 cp ~/.config/starship.toml ~/dotfiles/starship.toml
 
-#copy kitty config folder
-cp -r ~/.config/kitty ~/dotfiles/kitty
+#copy kitty folder
+cp -r ~/.config/kitty ~/dotfiles/
 
 cd ~/dotfiles
 

@@ -1,5 +1,6 @@
 "Basic preferences
 set rnu
+set nu
 syntax on
 set splitbelow
 set mouse=a
@@ -8,9 +9,12 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'kassio/neoterm'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/limelight.vim'
+"Plug 'davidgranstrom/nvim-markdown-preview' "Still need to figure this
+"out, gotta have pandoc
 
 Plug 'preservim/nerdtree'
 
@@ -18,6 +22,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
+
+"This is for LimeLight to know which color to make unfocused text!
+let g:limelight_conceal_ctermfg = 'gray'
+
+"translates W to w in exec mode to prevent error
+"https://stackoverflow.com/questions/3878692/how-to-create-an-alias-for-a-command-in-vim
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 "Neoterm stuff:
 let g:neoterm_default_mod = 'botright'
