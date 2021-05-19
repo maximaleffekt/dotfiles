@@ -21,6 +21,9 @@ cp ~/.zshrc ~/dotfiles/zshrc
 #copy starship toml
 cp ~/.config/starship.toml ~/dotfiles/starship.toml
 
+#copy kitty config folder
+cp -r ~/.config/kitty ~/dotfiles/kitty
+
 cd ~/dotfiles
 
 #git add vimrc
