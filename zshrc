@@ -45,7 +45,8 @@ alias v="nvim"
 alias neo="neofetch"
 alias up2="brew update && brew upgrade"
 alias kittyc="nvim ~/.config/kitty/kitty.conf"
+alias icat="kitty +kitten icat "
 
 #initialize starship prompt
 eval "$(starship init zsh)"
-neofetch
+#neofetch
