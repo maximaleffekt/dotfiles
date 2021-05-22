@@ -10,10 +10,10 @@
 cp -r ~/.config/nvim ~/dotfiles/
 
 #copy neofetch config
-cp -r ~/.config/neofetch/ ~/dotfiles/
+#cp -r ~/.config/neofetch/ ~/dotfiles/
 
 #copy fish config folder
-cp -r  ~/.config/fish ~/dotfiles/
+#cp -r  ~/.config/fish ~/dotfiles/
 
 #copy zshrc
 cp ~/.zshrc ~/dotfiles/zshrc
