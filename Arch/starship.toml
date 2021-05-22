@@ -1,0 +1,37 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[i ➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[i ➜](bold red)"
+vicmd_symbol = "[n ➜](bold green)"
+
+[directory]
+disabled = false
+truncation_symbol = ".../"
+
+[git_status]
+disabled = false
+
+[line_break]
+disabled = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[python]
+python_binary = ["python3", "python"]
+
+[shell]
+fish_indicator = "f"
+zsh_indicator = "z"
+bash_indicator = "b"
+disabled = false
+
+[status]
+disabled = false
+
+[username]
+show_always = true
