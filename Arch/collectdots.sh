@@ -10,10 +10,15 @@ cp -r ~/.config/neofetch/ ~/dotfiles/Arch/
 cp ~/.zshrc ~/dotfiles/Arch/zshrc
 
 #copy starship toml
-cp ~/.config/starship.toml ~/dotfiles/Arch/starship.toml
+cp ~/.config/starship.toml ~/dotfiles/Arch/
 
 #copy kitty folder
 cp -r ~/.config/kitty ~/dotfiles/Arch/
+
+#copy dwm files
+cp ~/repos/dwm/config.h ~/dotfiles/Arch/dwm/
+cp ~/.xinitrc ~/dotfiles/Arch/dwm/
+cp -r ~/dwmscripts ~/dotfiles/Arch/dwm/
 
 cd ~/dotfiles
 
