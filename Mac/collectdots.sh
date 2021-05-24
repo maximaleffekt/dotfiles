@@ -4,7 +4,7 @@
 cp -r ~/.config/nvim ~/dotfiles/Mac/
 
 #copy neofetch config
-cp -r ~/.config/neofetch/ ~/dotfiles/Mac/
+cp -r ~/.config/neofetch ~/dotfiles/Mac/
 
 #copy zshrc
 cp ~/.zshrc ~/dotfiles/Mac/zshrc
