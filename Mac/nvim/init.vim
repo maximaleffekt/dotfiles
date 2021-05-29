@@ -5,6 +5,13 @@ syntax on
 set splitbelow
 set mouse=a
 
+noremap <Space> <NOP>
+let mapleader = ' '
+noremap <leader>h <c-w>h
+noremap <leader>j <c-w>j
+noremap <leader>k <c-w>k
+noremap <leader>l <c-w>l
+
 "Vim-Plug preferences
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -46,7 +53,7 @@ tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
 
 "Nerdtree stuff:
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
