@@ -19,6 +19,13 @@ noremap <leader>l <c-w>l
 noremap <leader>g :Limelight!!<CR>
 "Disables highlighting from searches when pressing escape
 map <esc> <esc>:noh<CR>
+"Toggles nerdtree, duh
+nmap <F2> :NERDTreeToggle<CR>
+"Maps F3 to toggling the neoterm window
+noremap <F3> :Ttoggle<CR>
+tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
+"Makes Control-W exit Terminal mode in neoterm to allow faster switching
+tnoremap <c-w> <c-\><c-n><c-w>
 
 
 "Plug-ins:
@@ -51,26 +58,22 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_autoinsert = 1
 let g:neoterm_size = 10
+
+"Don't remember what this was for, currently unused
 "tnoremap <Esc> <C-\><C-n><C-w>k
-"Makes Control-W exit Terminal mode in neoterm to allow faster switching:
-tnoremap <c-w> <c-\><c-n><c-w>
-"Maps F3 to toggling the neoterm window
-noremap <F3> :Ttoggle<CR>
-tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
 
 
 "Nerdtree:
 
-" Start NERDTree and put the cursor back in the other window.
+" Start NERDTree and put the cursor back in the other window, currently unused
 "autocmd VimEnter * NERDTree | wincmd p
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+
 let NERDTreeShowHidden = 1      " Show hidden files
 let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
-"Open Nerdtree with F2
-nmap <F2> :NERDTreeToggle<CR>
 
 
 "Gruvbox:
@@ -80,7 +83,6 @@ colorscheme gruvbox-material
 
 
 "Miscellaneous:
-
 "translates W to w in exec mode to prevent annoying error
 "https://stackoverflow.com/questions/3878692/how-to-create-an-alias-for-a-command-in-vim
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
