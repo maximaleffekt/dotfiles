@@ -4,6 +4,9 @@ set nu
 syntax on
 set splitbelow
 set mouse=a
+set undofile
+set undodir=~/.local/share/nvim/backups/undo/
+set clipboard=unnamedplus
 
 
 "Shortcuts:
