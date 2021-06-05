@@ -29,14 +29,9 @@ bindkey -v
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+export EDITOR="nvim"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshc="nvim ~/.zshrc"
 alias c="clear"
 alias n="nvim"
@@ -46,7 +41,9 @@ alias neo="neofetch"
 alias up2="brew update && brew upgrade"
 alias kittyc="nvim ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat "
+alias slockspend="systemctl suspend && slock"
+alias rm="rm -i"
 
 #initialize starship prompt
 eval "$(starship init zsh)"
-neofetch
+#neofetch
