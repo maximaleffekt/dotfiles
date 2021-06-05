@@ -1,13 +1,10 @@
 #export ZSH_PLUGINS="/Users/max/.config/zsh-plugins" #idk if this is even needed for anything
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh #for manual git repo
+# source /opt/homebrew/Cellar/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions/issues/515
-
-#source ~/apple.zsh-theme #kinda irrelevant with starship
-
-#plugins=(git history sudo zsh-autosuggestions) #leftover from omz
 
 # Enable vi style keybinds
 bindkey -v
@@ -25,6 +22,8 @@ bindkey -v
 # else
 #   export EDITOR='mvim'
 # fi
+
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -46,6 +45,9 @@ alias neo="neofetch"
 alias up2="brew update && brew upgrade"
 alias kittyc="nvim ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat "
+alias ":q"="exit"
+alias "dfmd"="sudo nvim /usr/local/bin/dfm"
+alias "rm"="rm -i"
 
 #initialize starship prompt
 eval "$(starship init zsh)"

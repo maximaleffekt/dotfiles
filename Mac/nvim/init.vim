@@ -13,6 +13,7 @@ set clipboard=unnamedplus
 let mapleader = ' '
 "Disables spacebar in normal mode, to allow for easier leader key usage
 noremap <Space> <NOP> 
+noremap ö :
 "Allows easy switching between splits
 noremap <leader>h <c-w>h
 noremap <leader>j <c-w>j
