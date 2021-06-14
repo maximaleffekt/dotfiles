@@ -1,6 +1,7 @@
 source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh #for manual git repo
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions/issues/515
+source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Enable vi style keybinds
 bindkey -v
@@ -15,7 +16,6 @@ bindkey -v
 
 export EDITOR="nvim"
 
-# Example aliases
 alias zshc="nvim ~/.zshrc"
 alias c="clear"
 alias n="nvim"
