@@ -30,6 +30,8 @@ noremap <F3> :Ttoggle<CR>
 tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
 "Makes Control-W exit Terminal mode in neoterm to allow faster switching
 tnoremap <c-w> <c-\><c-n><c-w>
+"Opens Markdown preview
+let vim_markdown_preview_hotkey='<leader>m'
 
 
 "Plug-ins:
@@ -49,6 +51,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Currently unused add-ons, here to remember them
 "Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 "Colorschemes
 Plug 'sainnhe/gruvbox-material'
@@ -68,7 +71,6 @@ let g:neoterm_size = 10
 
 
 "Nerdtree:
-
 " Start NERDTree and put the cursor back in the other window, currently unused
 "autocmd VimEnter * NERDTree | wincmd p
 
@@ -78,6 +80,11 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 let NERDTreeShowHidden = 1      " Show hidden files
 let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
+
+
+"Vim-Markdown-Preview:
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_browser='Firefox'
 
 
 "Gruvbox:
