@@ -30,5 +30,3 @@ alias rm="rm -i"
 
 #initialize starship prompt
 eval "$(starship init zsh)"
-
-#neofetch

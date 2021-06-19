@@ -1,5 +1,6 @@
 # .xinitrc file for my Thinkpad X260
 nitrogen --restore
+	setxkbmap de
 setxkbmap -option caps:escape
 picom -b
 ~/dwmscripts/xsetroot-script-thinkpad.sh & disown
