@@ -27,6 +27,9 @@ alias kittyc="nvim ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat "
 alias slockspend="systemctl suspend && slock"
 alias rm="rm -i"
+alias lsa="lsd -A"
+alias ls=lsd
+alias sus="systemctl suspend"
 
 #initialize starship prompt
 eval "$(starship init zsh)"
