@@ -16,7 +16,7 @@ bindkey -v
 
 export EDITOR="nvim"
 
-alias zshc="nvim ~/.zshrc"
+alias zshc="$EDITOR ~/.zshrc"
 alias c="clear"
 alias n="nvim"
 alias nvimc="nvim ~/.config/nvim/init.vim"
@@ -30,6 +30,7 @@ alias rm="rm -i"
 alias lsa="lsd -A"
 alias ls=lsd
 alias sus="systemctl suspend"
+alias dwmc="$EDITOR ~/repos/dwm/config.h"
 
 #initialize starship prompt
 eval "$(starship init zsh)"

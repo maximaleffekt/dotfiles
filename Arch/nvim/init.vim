@@ -7,12 +7,14 @@ set mouse=a
 set undofile
 set undodir=~/.local/share/nvim/backups/undo/
 set clipboard=unnamedplus
+set termguicolors
 
 
 "Shortcuts:
 let mapleader = ' '
 "Disables spacebar in normal mode, to allow for easier leader key usage
-noremap <Space> <NOP> 
+noremap <Space> 
+noremap ö :
 "Allows easy switching between splits
 noremap <leader>h <c-w>h
 noremap <leader>j <c-w>j
@@ -29,7 +31,10 @@ noremap <F3> :Ttoggle<CR>
 tnoremap <F3> <c-\><c-n>:Ttoggle<CR><c-w>l
 "Makes Control-W exit Terminal mode in neoterm to allow faster switching
 tnoremap <c-w> <c-\><c-n><c-w>
-
+"Opens Markdown preview
+let vim_markdown_preview_hotkey='<leader>m'
+"Opens FZF window
+nnoremap <leader>z :FZF ~<CR>
 
 "Plug-ins:
 
@@ -45,12 +50,16 @@ Plug 'junegunn/limelight.vim'
 Plug 'kassio/neoterm'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf'
 
 "Currently unused add-ons, here to remember them
 "Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 "Colorschemes
 Plug 'sainnhe/gruvbox-material'
+Plug 'joshdick/onedark.vim'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 "Limelight:
@@ -67,7 +76,6 @@ let g:neoterm_size = 10
 
 
 "Nerdtree:
-
 " Start NERDTree and put the cursor back in the other window, currently unused
 "autocmd VimEnter * NERDTree | wincmd p
 
@@ -78,12 +86,28 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let NERDTreeShowHidden = 1      " Show hidden files
 let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
 
+"FZF:
+let g:fzf_layout = { 'window': 'enew' }
+
+"Markdown:
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_browser='Firefox'
+
 
 "Gruvbox:
-set background=dark
+"set background=dark
 let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material
 
+"Tokyonight
+let g:tokyonight_style = "storm"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_transparent_background = 1
+"let g:airline_theme = "tokyonight"
+
+"Onedark:
+let g:onedark_terminal_italics = 1
+
+colorscheme gruvbox-material
 
 "Miscellaneous:
 "translates W to w in exec mode to prevent annoying error
