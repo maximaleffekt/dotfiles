@@ -27,10 +27,12 @@ alias kittyc="nvim ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat "
 alias slockspend="systemctl suspend && slock"
 alias rm="rm -i"
+alias cp="cp -v"
 alias lsa="lsd -A"
 alias ls=lsd
 alias sus="systemctl suspend"
 alias dwmc="$EDITOR ~/repos/dwm/config.h"
+alias dwmi="cd ~/repos/dwm && make && sudo make install && cd"
 
 #initialize starship prompt
 eval "$(starship init zsh)"

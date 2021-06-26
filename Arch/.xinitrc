@@ -3,7 +3,7 @@ nitrogen --restore
 setxkbmap de
 setxkbmap -option caps:escape
 picom -b
-~/scripts/xsetroot-script-thinkpad.sh & disown
+$HOME/scripts/xsetroot-script-thinkpad.sh & disown
 #xinput set-prop "Your Device Name" "Option Name" "Value", used xinput-gui to determine optimal values
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" "0.2"
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" "1"
