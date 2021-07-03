@@ -1,21 +1,32 @@
-source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh #for manual git repo
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions/issues/515
-source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#             |     
+# _  /   __|  __ \  
+#   /  \__ \  | | | 
+# ___| ____/ _| |_| 
+# MasterMax13124' zsh configuration file
 
-# Enable vi style keybinds
+# Functions
+function fcd() {
+	a=$(pwd)
+	cd
+	b="$(fzf | rev | cut  -f2- -d "/" | rev)"
+	if [ -n "$b" ]; then
+		cd $b
+	else
+		cd $a
+	fi
+}
+
+function cl(){
+	cd $1
+	lsd -A
+}
+
+# Miscellaneous
 bindkey -v
-
-# export LANG=en_US.UTF-8
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-# export ARCHFLAGS="-arch x86_64"
-
 export EDITOR="nvim"
+export PATH=$PATH:~/scripts
 
+# Aliases
 alias zshc="$EDITOR ~/.zshrc"
 alias c="clear"
 alias n="nvim"
@@ -28,11 +39,20 @@ alias icat="kitty +kitten icat "
 alias slockspend="systemctl suspend && slock"
 alias rm="rm -i"
 alias cp="cp -v"
-alias lsa="lsd -A"
+alias mv="mv -v"
 alias ls=lsd
+alias lsa="lsd -A"
+alias lsl="lsd -l"
 alias sus="systemctl suspend"
 alias dwmc="$EDITOR ~/repos/dwm/config.h"
 alias dwmi="cd ~/repos/dwm && make && sudo make install && cd"
+alias py="python3 "
 
-#initialize starship prompt
+# Plug-ins
+source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh #for manual git repo
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions/issues/515
+source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Starship prompt
 eval "$(starship init zsh)"
