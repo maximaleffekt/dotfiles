@@ -55,25 +55,25 @@ alias du="du -h"
 alias kitop="kitty @ set-background-opacity"
 
 # Mac aliases
-alias up2="brew update && brew upgrade"
+#alias up2="brew update && brew upgrade"
 
 # Linux aliases
-#alias slockspend="systemctl suspend && slock"
-#alias sus="systemctl suspend"
-#alias dwmc="$EDITOR ~/repos/dwm/config.h"
-#alias dwmi="cd ~/repos/dwm && make && sudo make install && cd"
+alias slockspend="systemctl suspend && slock"
+alias sus="systemctl suspend"
+alias dwmc="$EDITOR ~/repos/dwm/config.h"
+alias dwmi="cd ~/repos/dwm && make && sudo make install && cd"
 
 # General plug-ins
 source /Users/max/.config/zsh-plugins/fzf/completion.zsh
 source /Users/max/.config/zsh-plugins/fzf/keybinds.zsh
 
 # Mac Plug-ins
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Linux Plug-ins
-#source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Plugin settings
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
