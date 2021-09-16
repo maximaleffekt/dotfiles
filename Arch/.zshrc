@@ -5,6 +5,10 @@
 # MasterMax13124' zsh configuration file
 
 # Functions
+function nullpointer() {
+	curl -F"file=@$1" https://0x0.st
+}
+
 function fcd() {
 	a=$(pwd)
 	cd
@@ -20,6 +24,15 @@ function cl(){
 	cd $1
 	lsd -A
 }
+
+function cht(){
+	curl "cht.sh/$1" | less -R
+}
+
+chtfzf() {
+    curl -ks cht\.sh/$(curl -ks cht\.sh/:list | IFS=+ fzf --preview 'curl -ks http://cht.sh{}' -q "$*") | less -R
+}
+
 
 # Miscellaneous
 bindkey -v
@@ -50,12 +63,16 @@ alias py="python3"
 alias ls="lsd"
 alias lsa="lsd -A"
 alias lsl="lsd -l"
+alias tree="lsd --tree"
 alias cp="cp -v"
 alias du="du -h"
 alias kitop="kitty @ set-background-opacity"
 
 # Mac aliases
 #alias up2="brew update && brew upgrade"
+#alias sherlock="python3 /Users/max/repos/gitstuff/sherlock/sherlock/__main__.py"
+#alias deploydst="scp dst/* root@binarydreams.xyz:/var/www/binarydreams/"
+#alias ssh="kitty +kitten ssh" # this is just for kitty
 
 # Linux aliases
 alias slockspend="systemctl suspend && slock"
