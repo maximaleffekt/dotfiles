@@ -8,6 +8,8 @@ set undofile
 set undodir=~/.local/share/nvim/backups/undo/
 set clipboard=unnamedplus
 set termguicolors
+set ignorecase
+set smartcase
 
 
 "Shortcuts:
@@ -36,8 +38,7 @@ noremap <leader>cd :CocDisable<CR>
 noremap <leader>g :Limelight!!<CR>
 
 "Disables highlighting from searches when pressing escape
-map <esc> <esc>:noh<CR>
-
+map <esc> <esc>:nohlsearch<CR>
 
 "Toggles nerdtree, duh
 nmap <F2> :NERDTreeToggle<CR>
@@ -83,6 +84,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'joshdick/onedark.vim'
 Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
+
 
 "Plug-in settings:
 
