@@ -5,10 +5,13 @@
 # MasterMax13124' zsh configuration file
 
 # Functions
+
+# uploads the file to the nullpointer website
 function nullpointer() {
 	curl -F"file=@$1" https://0x0.st
 }
 
+# uses fzf to quickly find a (sub)folder from anywhere
 function fcd() {
 	a=$(pwd)
 	cd
@@ -20,13 +23,42 @@ function fcd() {
 	fi
 }
 
+# enters a directory and lists its contents
 function cl(){
 	cd $1
 	lsd -A
 }
 
+# opens cht.sh entry for keyword
 function cht(){
-	curl "cht.sh/$1" | less -R
+	curl -s "cht.sh/$1" | less -R
+}
+
+# easily compiles C/C++ file using the right file name for output
+function comp(){
+	fileending="$(echo "$1" | cut -d. -f2)"
+	filename="$(echo "$1" | cut -d. -f 1)"
+	if [ "$fileending" = "c" ]; then
+		clang $1 -o $filename
+
+	elif [ "$fileending" = "cpp" ]; then
+		clang++ $1 -o $filename
+	fi
+}
+
+# compiles and executes C file with one command
+function compex(){
+	filename="$(echo "$1" | cut -d. -f 1)"
+	fileending="$(echo "$1" | cut -d. -f2)"
+	rm -f $filename 2> /dev/null
+	if [ "$fileending" = "c" ]; then
+		gcc $1 -o $filename
+
+	elif [ "$fileending" = "cpp" ]; then
+		g++ $1 -o $filename
+	fi
+
+	./$filename 2> /dev/null
 }
 
 chtfzf() {
@@ -49,6 +81,7 @@ setopt HIST_FIND_NO_DUPS
 setopt SHARE_HISTORY
 
 # General aliases
+alias resource="source ~/.zshrc"
 alias zshc="$EDITOR ~/.zshrc"
 alias c="clear"
 alias n="nvim"
