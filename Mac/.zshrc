@@ -38,11 +38,12 @@ function cht(){
 function comp(){
 	fileending="$(echo "$1" | cut -d. -f2)"
 	filename="$(echo "$1" | cut -d. -f 1)"
+
 	if [ "$fileending" = "c" ]; then
-		clang $1 -o $filename
+		gcc-11 $@ -o $filename
 
 	elif [ "$fileending" = "cpp" ]; then
-		clang++ $1 -o $filename
+		g++-11 $@ -o $filename
 	fi
 }
 
@@ -51,11 +52,12 @@ function compex(){
 	filename="$(echo "$1" | cut -d. -f 1)"
 	fileending="$(echo "$1" | cut -d. -f2)"
 	rm -f $filename 2> /dev/null
+
 	if [ "$fileending" = "c" ]; then
-		gcc $1 -o $filename
+		gcc-11 $@ -o $filename
 
 	elif [ "$fileending" = "cpp" ]; then
-		g++ $1 -o $filename
+		g++-11 $@ -o $filename
 	fi
 
 	./$filename 2> /dev/null

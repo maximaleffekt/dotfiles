@@ -28,7 +28,8 @@ noremap <leader>k <c-w>k
 noremap <leader>l <c-w>l
 
 "Quickly creates split
-noremap <leader>v :vsplit<CR><c-w>l
+noremap <leader>sv :vsplit<CR><c-w>l
+noremap <leader>sh :split<CR><c-w>l
 
 "Enable or disable Coc completion
 noremap <leader>ce :CocEnable<CR>
@@ -75,14 +76,18 @@ Plug 'kassio/neoterm'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
+"Plug 'glepnir/dashboard-nvim'
 
 Plug 'davidgranstrom/nvim-markdown-preview'
 "Plug 'JamshedVesuna/vim-markdown-preview'
 
 "Colorschemes:
 Plug 'sainnhe/gruvbox-material'
-Plug 'joshdick/onedark.vim'
 Plug 'ghifarit53/tokyonight-vim'
+"Plug 'joshdick/onedark.vim'
+"Plug 'rayes0/blossom.vim'
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'FrenzyExists/aquarium-vim'
 call plug#end()
 
 
@@ -115,18 +120,20 @@ let g:fzf_layout = { 'window': 'enew' }
 "set background=dark
 let g:gruvbox_material_background = 'medium'
 
-"Tokyonight
+"Tokyonight:
 let g:tokyonight_style = "storm"
 let g:tokyonight_italic_functions = 1
 let g:tokyonight_transparent_background = 1
-let g:airline_theme = "tokyonight"
+let g:airline_theme = "gruvbox_material"
 
 "Onedark:
 let g:onedark_terminal_italics = 1
 
-colorscheme tokyonight
+colorscheme gruvbox-material
 
 "Miscellaneous:
 "translates W to w in exec mode to prevent annoying error
 "https://stackoverflow.com/questions/3878692/how-to-create-an-alias-for-a-command-in-vim
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+"the next line is probably bad
+cnoreabbrev <expr> ö ((getcmdtype() is# ':' && getcmdline() is# 'ö')?('q'):('q'))
