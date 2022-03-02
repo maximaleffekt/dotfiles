@@ -1,3 +1,8 @@
+"                            _)            
+"  __ \    _ \   _ \ \ \   /  |  __ `__ \  
+"  |   |   __/  (   | \ \ /   |  |   |   | 
+" _|  _| \___| \___/   \_/   _| _|  _|  _| 
+
 "Basics:
 set rnu
 set nu
@@ -20,6 +25,9 @@ noremap <Space> <NOP>
 
 "Ö is unused anyways, now it saves me a shift press
 noremap ö :
+
+noremap ä }
+noremap Ä {
 
 "Allows easy switching between splits
 noremap <leader>h <c-w>h
@@ -59,6 +67,11 @@ let vim_markdown_preview_hotkey='<leader>m'
 
 "Opens FZF window
 nnoremap <leader>z :FZF ~<CR>
+
+"Mess around with some tabs
+noremap <leader>t :tabnew<CR>
+noremap <leader>e :tabprevious<CR>
+noremap <leader>r :tabnext<CR>
 
 
 "Plug-ins:
@@ -123,13 +136,13 @@ let g:gruvbox_material_background = 'medium'
 "Tokyonight:
 let g:tokyonight_style = "storm"
 let g:tokyonight_italic_functions = 1
-let g:tokyonight_transparent_background = 1
-let g:airline_theme = "gruvbox_material"
+let g:tokyonight_transparent_background = 0
 
 "Onedark:
 let g:onedark_terminal_italics = 1
 
 colorscheme gruvbox-material
+let g:airline_theme = "gruvbox_material"
 
 "Miscellaneous:
 "translates W to w in exec mode to prevent annoying error
@@ -137,3 +150,11 @@ colorscheme gruvbox-material
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 "the next line is probably bad
 cnoreabbrev <expr> ö ((getcmdtype() is# ':' && getcmdline() is# 'ö')?('q'):('q'))
+" Set scrolloff to 25% of the window height. Thanks koala#8944
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/4
+augroup END
+" Always start nvim with Coc disabled
+"let g:coc_start_at_startup = v:false

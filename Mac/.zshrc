@@ -69,13 +69,14 @@ chtfzf() {
 
 
 # Miscellaneous
-bindkey -v
+# bindkey -v
 export EDITOR="nvim"
 export PATH=$PATH:~/scripts
+export PATH=$PATH:/Users/max/.cargo/bin
 
 # Sets history settings
 # https://koenwoortman.com/zsh-command-history/
-HISTFILE="~/.zsh_history"
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
@@ -101,7 +102,10 @@ alias lsl="lsd -l"
 alias tree="lsd --tree"
 alias cp="cp -v"
 alias du="du -h"
+alias df="df -h"
+alias ra="ranger"
 alias kitop="kitty @ set-background-opacity"
+alias tpd="zsh ~/scripts/tokiponadict | fzf --ansi"
 
 # Mac aliases
 alias up2="brew update && brew upgrade"
@@ -128,7 +132,7 @@ source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highl
 #source ~/.config/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Plugin settings
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(completion history )
 autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions/issues/515
 
 # Initialize starship prompt
