@@ -26,12 +26,18 @@ function fcd() {
 # enters a directory and lists its contents
 function cl(){
 	cd $1
-	lsd -A
+	lsd
 }
 
 # opens cht.sh entry for keyword
 function cht(){
 	curl -s "cht.sh/$1" | less -R
+}
+
+# Only counts empty lines
+# For reference: https://kevcaz.insileco.io/notes/linux/countlines/
+function wcn(){
+	cat $1 | sed '/^\s*#/d;/^\s*$/d' | wc -l
 }
 
 # easily compiles C/C++ file using the right file name for output
@@ -86,7 +92,6 @@ setopt SHARE_HISTORY
 # General aliases
 alias resource="source ~/.zshrc"
 alias zshc="$EDITOR ~/.zshrc"
-alias c="clear"
 alias n="nvim"
 alias nvimc="nvim ~/.config/nvim/init.vim"
 alias v="nvim"
