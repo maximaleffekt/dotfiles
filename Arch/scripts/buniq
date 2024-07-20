@@ -1,2 +1,0 @@
-#!/bin/dash
-cat -n $1 | sort -uk2 | sort -n | cut -f2-
