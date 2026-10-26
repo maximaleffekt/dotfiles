@@ -18,31 +18,16 @@ function fcd() {
 	fi
 }
 
-# enters a directory and lists its contents
-function cl(){
-	cd $1
-	lsd
-}
-
-# opens cht.sh entry for keyword
-function cht(){
-	curl -s "cht.sh/$1" | less -R
-}
-
-# Only counts empty lines
+# Doesn't count empty lines
 # For reference: https://kevcaz.insileco.io/notes/linux/countlines/
 function wcn(){
 	cat $1 | sed '/^\s*#/d;/^\s*$/d' | wc -l
 }
 
-chtfzf() {
-    curl -ks cht\.sh/$(curl -ks cht\.sh/:list | IFS=+ fzf --preview 'curl -ks http://cht.sh{}' -q "$*") | less -R
-}
-
 export EDITOR="nvim"
 export PATH=$PATH:~/scripts
-export PATH=$PATH:/Users/max/Library/Python/3.10/bin
-
+export PATH=$PATH:/Users/max/.local/bin
+export PATH=$PATH:/Users/max/.cargo/bin
 # Sets history settings
 # https://koenwoortman.com/zsh-command-history/
 HISTFILE="$HOME/.zsh_history"
@@ -68,7 +53,12 @@ alias mv="mv -v"
 alias du="du -h"
 alias df="df -h"
 alias up2="brew update && brew upgrade"
-alias py="python3"
+alias py="/opt/homebrew/bin/python3"
+alias python3="/opt/homebrew/bin/python3"
+alias pip="/opt/homebrew/bin/pip3"
+alias pip3="/opt/homebrew/bin/pip3"
+alias gdl="gallery-dl"
+alias gdlp="gallery-dl $(pbpaste)"
 
 # Plug-ins
 source /Users/max/.config/zsh-plugins/fzf/completion.zsh
@@ -81,3 +71,5 @@ autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions
 
 # Initialize starship prompt
 eval "$(starship init zsh)"
+
+export PATH=$PATH:/Users/max/.local/bin
