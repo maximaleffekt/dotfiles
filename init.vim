@@ -5,7 +5,6 @@
 " Maximaleffekt's neovim configuration file
 
 "Basics:
-"set rnu
 set nu
 syntax on
 set splitbelow
@@ -43,7 +42,8 @@ noremap <leader>sh :split<CR><c-w>l
 "Toggles various plugins
 noremap <leader>ce :CocEnable<CR>
 noremap <leader>cd :CocDisable<CR>
-noremap <leader>g :Limelight!!<CR>
+noremap <leader>gg :Goyo<CR> :set linebreak<CR>
+noremap <leader>gd :Goyo<CR> :set nolinebreak<CR>
 nmap <F2> :NERDTreeToggle<CR>
 nnoremap <leader>z :FZF ~<CR>
 
@@ -54,41 +54,16 @@ Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 
-Plug 'junegunn/limelight.vim'
-Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf'
 
-"Plug 'glepnir/dashboard-nvim'
-
-Plug 'github/copilot.vim'
-
-"Colorschemes:
 Plug 'sainnhe/gruvbox-material'
-Plug 'ghifarit53/tokyonight-vim'
-"Plug 'joshdick/onedark.vim'
-"Plug 'rayes0/blossom.vim'
-"Plug 'drewtempelmeyer/palenight.vim'
-"Plug 'FrenzyExists/aquarium-vim'
 call plug#end()
 
-
 "Plug-in settings:
-
 "Limelight:
 let g:limelight_conceal_ctermfg = 'DarkGray'
 let g:limelight_conceal_guifg = 'DarkGray'
-
-"Nerdtree:
-" Start NERDTree and put the cursor back in the other window, currently unused
-"autocmd VimEnter * NERDTree | wincmd p
-
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
-
-let NERDTreeShowHidden = 1      " Show hidden files
-let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
 
 "FZF:
 let g:fzf_layout = { 'window': 'enew' }
@@ -96,12 +71,6 @@ let g:fzf_layout = { 'window': 'enew' }
 "Gruvbox:
 "set background=dark
 let g:gruvbox_material_background = 'medium'
-
-"Tokyonight:
-let g:tokyonight_style = "storm"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_transparent_background = 0
-
 colorscheme gruvbox-material
 let g:airline_theme = "gruvbox_material"
 
@@ -117,5 +86,3 @@ augroup VCenterCursor
   au BufEnter,WinEnter,WinNew,VimResized *,*.*
         \ let &scrolloff=winheight(win_getid())/4
 augroup END
-" Always start nvim with Coc disabled
-let g:coc_start_at_startup = v:false
