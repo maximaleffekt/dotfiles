@@ -1,0 +1,11 @@
+# Reload: Command + Shift + comma
+font-size = 18
+#font-family = scientifica
+theme = Gruvbox Material Dark
+#theme = Apple Classic
+background-opacity = 0.7
+background-blur = 10
+macos-titlebar-style = tabs
+macos-icon = official
+auto-update = off
+shell-integration-features = ssh-env
