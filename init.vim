@@ -40,33 +40,17 @@ noremap <leader>sv :vsplit<CR><c-w>l
 noremap <leader>sh :split<CR><c-w>l
 
 "Toggles various plugins
-noremap <leader>ce :CocEnable<CR>
-noremap <leader>cd :CocDisable<CR>
 noremap <leader>gg :Goyo<CR> :set linebreak<CR>
 noremap <leader>gd :Goyo<CR> :set nolinebreak<CR>
-nmap <F2> :NERDTreeToggle<CR>
-nnoremap <leader>z :FZF ~<CR>
 
 "Plug-ins:
 call plug#begin('~/.vim/plugged')
-
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
-
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf'
-
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
-
-"Plug-in settings:
-"Limelight:
-let g:limelight_conceal_ctermfg = 'DarkGray'
-let g:limelight_conceal_guifg = 'DarkGray'
-
-"FZF:
-let g:fzf_layout = { 'window': 'enew' }
 
 "Gruvbox:
 "set background=dark
@@ -78,9 +62,8 @@ let g:airline_theme = "gruvbox_material"
 "translates W to w in exec mode to prevent annoying error
 "https://stackoverflow.com/questions/3878692/how-to-create-an-alias-for-a-command-in-vim
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-"the next line is probably bad
-cnoreabbrev <expr> ö ((getcmdtype() is# ':' && getcmdline() is# 'ö')?('q'):('q'))
-" Set scrolloff to 25% of the window height. Thanks koala#8944
+
+"Set scrolloff to 25% of the window height. Thanks koala#8944
 augroup VCenterCursor
   au!
   au BufEnter,WinEnter,WinNew,VimResized *,*.*
