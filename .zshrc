@@ -6,18 +6,6 @@
 
 # Functions
 
-# uses fzf to quickly find a (sub)folder from anywhere
-function fcd() {
-	a=$(pwd)
-	cd
-	b="$(fzf | rev | cut  -f2- -d "/" | rev)"
-	if [ -n "$b" ]; then
-		cd $b
-	else
-		cd $a
-	fi
-}
-
 # Doesn't count empty lines
 # For reference: https://kevcaz.insileco.io/notes/linux/countlines/
 function wcn(){
@@ -28,6 +16,7 @@ export EDITOR="nvim"
 export PATH=$PATH:~/scripts
 export PATH=$PATH:/Users/max/.local/bin
 export PATH=$PATH:/Users/max/.cargo/bin
+
 # Sets history settings
 # https://koenwoortman.com/zsh-command-history/
 HISTFILE="$HOME/.zsh_history"
@@ -61,8 +50,6 @@ alias gdl="gallery-dl"
 alias gdlp="gallery-dl $(pbpaste)"
 
 # Plug-ins
-source /Users/max/.config/zsh-plugins/fzf/completion.zsh
-source /Users/max/.config/zsh-plugins/fzf/keybinds.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -71,5 +58,3 @@ autoload compinit && compinit # https://github.com/zsh-users/zsh-autosuggestions
 
 # Initialize starship prompt
 eval "$(starship init zsh)"
-
-export PATH=$PATH:/Users/max/.local/bin
